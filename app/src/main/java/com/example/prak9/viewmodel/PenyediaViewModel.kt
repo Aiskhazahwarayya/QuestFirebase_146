@@ -12,7 +12,7 @@ fun CreationExtras.aplikasiDataSiswa(): AplikasiDataSiswa = (
         )
 object PenyediaViewModel {
     val Factory = viewModelFactory {
-        initializer { HomeViewModel(aplikasiDataSiswa().container.repositorySiswa) }
-        initializer { EntryViewModel(aplikasiDataSiswa().container.repositorySiswa) }
+        initializer { HomeViewModel(aplikasiDataSiswa().container.repositoriSiswa) }
+        initializer { EntryViewModel(aplikasiDataSiswa().container.repositoriSiswa) }
     }
 }
