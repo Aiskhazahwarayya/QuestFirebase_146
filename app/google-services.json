@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "653087026248",
+    "project_id": "fir-kotlin-deb51",
+    "storage_bucket": "fir-kotlin-deb51.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:653087026248:android:e27ef461095f551df1fc7d",
+        "android_client_info": {
+          "package_name": "com.example.prak9"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9wx9TYo6gx0gIvWJGfW3l_DT2J3eCqJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
