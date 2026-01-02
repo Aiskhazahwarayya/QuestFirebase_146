@@ -1,5 +1,6 @@
 package com.example.prak9.repositori
 
+import android.util.Log
 import com.example.prak9.modeldata.Siswa
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
@@ -29,13 +30,22 @@ class FirebaseRepositorySiswa : RepositorySiswa {
     }
 
     override suspend fun postDataSiswa(siswa: Siswa) {
-        val docRef = if (siswa.id == 0L) collection.document() else collection.document (siswa.id.toString())
-        val data = hashMapOf(
-            "id" to (siswa.id.takeIf { it != 0L } ?: docRef.id.hashCode()),
-            "nama" to siswa.nama,
-            "alamat" to siswa.alamat,
-            "telpon" to siswa.telpon
-        )
-        docRef.set(data).await()
+        try {
+            // Jika ID 0 (data baru), buat dokumen baru dengan ID otomatis dari Firebase
+            val docRef = if (siswa.id == 0L) collection.document() else collection.document(siswa.id.toString())
+
+            val data = hashMapOf(
+                // Gunakan ID dari docRef agar sinkron antara ID dokumen dan isi field id
+                "id" to (if (siswa.id == 0L) docRef.id.hashCode().toLong() else siswa.id),
+                "nama" to siswa.nama,
+                "alamat" to siswa.alamat,
+                "telpon" to siswa.telpon
+            )
+
+            docRef.set(data).await()
+            Log.d("FIRESTORE", "Data Berhasil Disimpan!")
+        } catch (e: Exception) {
+            Log.e("FIRESTORE", "Gagal menyimpan data: ${e.message}")
+        }
     }
 }

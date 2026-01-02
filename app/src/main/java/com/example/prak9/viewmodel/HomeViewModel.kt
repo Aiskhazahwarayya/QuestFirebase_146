@@ -1,6 +1,6 @@
 package com.example.prak9.viewmodel
 
-import android.net.http.HttpException
+import android.util.Log
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
@@ -27,12 +27,21 @@ class HomeViewModel(private val repositoriSiswa: RepositorySiswa) : ViewModel() 
 
     fun loadSiswa() {
         viewModelScope.launch {
+            Log.d("HomeViewModel", "Loading siswa...")
             statusUiSiswa = StatusUiSiswa.Loading
+
             statusUiSiswa = try {
-                StatusUiSiswa.Success(repositoriSiswa.getDataSiswa())
+                val data = repositoriSiswa.getDataSiswa()
+                Log.d("HomeViewModel", "Data loaded: ${data.size} items")
+                data.forEach {
+                    Log.d("HomeViewModel", "Siswa: ID=${it.id}, Nama=${it.nama}")
+                }
+                StatusUiSiswa.Success(data)
             } catch (e: IOException) {
+                Log.e("HomeViewModel", "IOException: ${e.message}", e)
                 StatusUiSiswa.Error
-            } catch (e: HttpException) {
+            } catch (e: Exception) {
+                Log.e("HomeViewModel", "Exception: ${e.message}", e)
                 StatusUiSiswa.Error
             }
         }
