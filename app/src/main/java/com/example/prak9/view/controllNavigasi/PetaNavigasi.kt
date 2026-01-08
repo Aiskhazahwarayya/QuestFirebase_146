@@ -3,12 +3,17 @@ package com.example.prak9.view.controllNavigasi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.navArgument
+import com.example.prak9.view.DetailSiswaScreen
+import com.example.prak9.view.EditSiswaScreen
 import com.example.prak9.view.EntrySiswaScreen
 import com.example.prak9.view.HomeScreen
 import com.example.prak9.view.route.DestinasiDetail
+import com.example.prak9.view.route.DestinasiEdit
 import com.example.prak9.view.route.DestinasiEntry
 import com.example.prak9.view.route.DestinasiHome
 
@@ -44,6 +49,21 @@ fun HostNavigasi(
                     navController.navigate(DestinasiHome.route)
                 }
             )
+        }
+
+        composable(DestinasiDetail.routeWithArgs, arguments = listOf(navArgument
+            (DestinasiDetail.itemIdArg) {
+            type = NavType.StringType })
+        ){
+            DetailSiswaScreen(navigateToEditItem = {navController.navigate("${DestinasiEdit.route}/$it")},
+                navigateBack = { navController.navigate(DestinasiHome.route) })
+        }
+        composable(
+            DestinasiEdit.routeWithArgs, arguments = listOf(navArgument
+                (DestinasiEdit.itemIdArg){
+                type = NavType.StringType})){
+            EditSiswaScreen(navigateBack = { navController.navigate(DestinasiHome.route) },
+                onNavigateUp = { navController.navigateUp() })
         }
     }
 }
