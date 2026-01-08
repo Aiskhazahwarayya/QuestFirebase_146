@@ -9,6 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.prak9.view.route.DestinasiEdit
+import com.example.prak9.viewmodel.EditViewModel
 import com.example.prak9.viewmodel.PenyediaViewModel
 import kotlinx.coroutines.launch
 
@@ -44,3 +45,5 @@ fun EditSiswaScreen(
         )
     }
 }
+
+
