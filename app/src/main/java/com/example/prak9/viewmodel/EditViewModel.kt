@@ -41,13 +41,12 @@ RepositorySiswa
             nama.isNotBlank() && alamat.isNotBlank() && telpon.isNotBlank()
         }
     }
-    suspend fun editSatuSiswa(){
+    suspend fun editSatuSiswa() {
         if (validasiInput(uiStateSiswa.detailSiswa)){
             try {
-                repositorySiswa.editSatuSiswa(idSiswa,uiStateSiswa.detailSiswa.toSiswa
-                    ())
+                repositorySiswa.editSatuSiswa(idSiswa,uiStateSiswa.detailSiswa.toDataSiswa())
                 println("Update Sukses: $idSiswa")
-            } catch (e: Exception) {
+            }catch (e: Exception) {
                 println("Update Error: ${e.message}")
             }
         }
