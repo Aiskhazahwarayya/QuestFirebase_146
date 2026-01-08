@@ -6,4 +6,21 @@
 
 <img width="1280" height="2856" alt="tampilan1" src="https://github.com/user-attachments/assets/3b966263-67ed-43bd-a60b-1bbec6fc16cc" />
 
+<img width="1280" height="2856" alt="detail" src="https://github.com/user-attachments/assets/033a7b8b-6809-4a11-904c-0c5db2aa0b86" />
+
+<img width="1280" height="2856" alt="edit" src="https://github.com/user-attachments/assets/c292897e-2d96-43b0-96e0-2956c12903df" />
+
+<img width="1280" height="2856" alt="pop up" src="https://github.com/user-attachments/assets/a9f891b6-2274-4051-aa15-10ebafbd6cbc" />
+
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/efed69d7-33ad-47f2-ac96-c4f1dabbcbf5" />
+
+
+
+Tambah :
 <img width="2880" height="1800" alt="Screenshot 2026-01-02 214611" src="https://github.com/user-attachments/assets/de068301-22fc-421c-b83b-c77b96f0e599" />
+
+Edit :
+<img width="2880" height="1800" alt="Screenshot 2026-01-08 220507" src="https://github.com/user-attachments/assets/17f88c66-f2df-46cd-9aa1-1037a8b4be0a" />
+
+Hapus :
+<img width="2880" height="1800" alt="image" src="https://github.com/user-attachments/assets/f70bcf76-146d-4cd1-8972-1c7e805ca7ea" />
