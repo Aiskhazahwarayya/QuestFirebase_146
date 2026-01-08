@@ -1,4 +1,4 @@
-<img width="1280" height="2856" alt="homescreen" src="https://github.com/user-attachments/assets/b4a313df-d7eb-453d-97b8-b1ed857ed276" />
+<img width="300" height="600" alt="homescreen" src="https://github.com/user-attachments/assets/b4a313df-d7eb-453d-97b8-b1ed857ed276" />
 
 <img width="1280" height="2856" alt="tambah" src="https://github.com/user-attachments/assets/6cc8874d-14f3-486f-acd9-aa33c5b744ea" />
 
