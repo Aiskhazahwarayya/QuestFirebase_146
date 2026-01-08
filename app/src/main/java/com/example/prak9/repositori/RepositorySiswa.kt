@@ -51,4 +51,21 @@ class FirebaseRepositorySiswa : RepositorySiswa {
             Log.e("FIRESTORE", "Gagal menyimpan data: ${e.message}")
         }
     }
+
+    override suspend fun getSatuSiswa(id: Long): Siswa? {
+        return try {
+            val query = collection.whereEqualTo("id", id).get().await()
+            query.documents.firstOrNull()?.let { doc ->
+                Siswa(
+                    id = doc.getLong("id")?.toLong() ?: 0,
+                    nama = doc.getString("nama") ?: "",
+                    alamat = doc.getString("alamat") ?: "",
+                    telpon = doc.getString("telpon") ?: ""
+                )
+            }
+        } catch (e: Exception) {
+            println("Gagal baca data siswa : ${e.message}")
+            null
+        }
+    }
 }
