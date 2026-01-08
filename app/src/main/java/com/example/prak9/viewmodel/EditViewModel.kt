@@ -6,10 +6,12 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.prak9.modeldata.DetailSiswa
 import com.example.prak9.modeldata.UIStateSiswa
 import com.example.prak9.repositori.RepositorySiswa
 import com.example.prak9.view.route.DestinasiDetail
 import kotlinx.coroutines.launch
+
 
 class EditViewModel(savedStateHandle: SavedStateHandle, private val repositorySiswa:
 RepositorySiswa
@@ -26,5 +28,10 @@ RepositorySiswa
             uiStateSiswa = repositorySiswa.getSatuSiswa(idSiswa)!!
                 .toUiStateSiswa(true)
         }
+    }
+    fun updateUiState(detailSiswa: DetailSiswa) {
+        uiStateSiswa =
+            UIStateSiswa(detailSiswa = detailSiswa, isEntryValid = validasiInput
+                (detailSiswa))
     }
 }
